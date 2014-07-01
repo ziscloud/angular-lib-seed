@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
 
     grunt.registerTask('default', [ 'dev' ]);
-    grunt.registerTask('dev', [ 'jshint', 'build:dev', 'http-server:dev', 'watch:src' ]);
+    grunt.registerTask('dev', [ 'jshint', 'build:dev', 'http-server:dev', 'watch' ]);
     grunt.registerTask('dist', [ 'jshint', 'build:dist' ]);
     grunt.registerMultiTask('build', simpleMultiTaskRunner);
     grunt.registerTask('test', [ 'build:dist', 'karma:unit', 'watch:test' ]);
@@ -9,7 +9,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         config: {
-            example: 'example',
+            demo: 'demo',
             dist: 'dist',
             src: {
                 js: [ 'src/**/*.js', '!src/**/*.spec.js' ]
@@ -65,6 +65,10 @@ module.exports = function (grunt) {
         watch:{
             src: {
                 files: '<%= config.src.js %>',
+                tasks: [ 'jshint', 'build:dev' ]
+            },
+            demo: {
+                files: '<%= config.demo %>/**',
                 tasks: [ 'jshint', 'build:dev' ]
             },
             test: {
