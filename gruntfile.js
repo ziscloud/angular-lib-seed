@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
 
     grunt.registerTask('default', [ 'dev' ]);
-    grunt.registerTask('dev', [ 'jshint', 'build:dev', 'http-server:dev', 'watch' ]);
+    grunt.registerTask('dev', [ 'jshint', 'build:dev', 'http-server:dev', 'watch:demo' ]);
     grunt.registerTask('dist', [ 'jshint', 'build:dist' ]);
     grunt.registerMultiTask('build', simpleMultiTaskRunner);
     grunt.registerTask('test', [ 'build:dist', 'karma:unit', 'watch:test' ]);
@@ -49,6 +49,9 @@ module.exports = function (grunt) {
             }
         },
         ngAnnotate: {
+            options: {
+                singleQuotes: true
+            },
             release: {
                 files: [{
                     src: '<%= config.dist %>/<%= pkg.name %>.js',
@@ -63,12 +66,11 @@ module.exports = function (grunt) {
             }
         },
         watch:{
-            src: {
-                files: '<%= config.src.js %>',
-                tasks: [ 'jshint', 'build:dev' ]
-            },
             demo: {
-                files: '<%= config.demo %>/**',
+                options: {
+                    livereload: true
+                },
+                files: [ '<%= config.src.js %>', '<%= config.demo %>/**' ],
                 tasks: [ 'jshint', 'build:dev' ]
             },
             test: {

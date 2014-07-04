@@ -9,7 +9,8 @@ module.exports = function (config) {
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
             'dist/angular-lib-seed.js',
-            'src/**/*.spec.js'
+            'src/**/*.spec.js',
+            'test/main.js'
         ],
 
         reporters: [ 'dots' ],
