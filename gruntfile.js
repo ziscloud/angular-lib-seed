@@ -62,7 +62,7 @@ module.exports = function (grunt) {
         uglify: {
             release: {
                 src: '<%= config.dist %>/<%= pkg.name %>.js',
-                dest: '<%= config.dist %>/<%= pkg.name %>.js'
+                dest: '<%= config.dist %>/<%= pkg.name %>.min.js'
             }
         },
         watch:{
