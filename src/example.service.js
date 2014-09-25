@@ -1,4 +1,4 @@
-// ### example.service.js >>
+'use strict';
 
 angular
     .module('angular-lib-seed.example', [ ])
@@ -9,20 +9,3 @@ angular
             return true;
         };
     });
-
-
-// ### << example.service.js
-
-
-
-// ### main.js >>
-
-angular
-	.module('angular-lib-seed', [
-		'angular-lib-seed.submodule'
-	]);
-
-
-// ### << main.js
-
-

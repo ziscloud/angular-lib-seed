@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "homepage": "https://github.com/erykpiast/angular-lib-seed",
   "authors": [
-    "Eryk Napierała <eryk.piast@gmail.com>"
+    "Tony Wang <ziscloud@gmail.com>"
   ],
   "description": "Angular library/reusable module seed",
-  "main": "src/main.js",
+  "main": "dist/example.service.js",
   "keywords": [
     "angular",
     "library",
