@@ -55,14 +55,14 @@ module.exports = function (grunt) {
             release: {
                 files: [{
                     src: '<%= config.dist %>/<%= pkg.name %>.js',
-                    dest: '<%= config.dist %>/<%= pkg.name %>.min.js'
+                    dest: '<%= config.dist %>/<%= pkg.name %>.js'
                 }]
             }
         },
         uglify: {
             release: {
                 src: '<%= config.dist %>/<%= pkg.name %>.js',
-                dest: '<%= config.dist %>/<%= pkg.name %>.min.js'
+                dest: '<%= config.dist %>/<%= pkg.name %>.js'
             }
         },
         watch:{
